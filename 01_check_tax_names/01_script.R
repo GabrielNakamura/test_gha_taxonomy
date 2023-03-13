@@ -4,7 +4,7 @@ library(glue)
 library(rgbif)
 occ <- read.csv(here::here("data_table.csv"), sep = ",")
 
-# searching species names in CAS ------------------------------------------
+# searching species names in gbif ------------------------------------------
 spp <- unique(occ$spp)
 
 spp_names <- name_backbone_checklist(spp)
