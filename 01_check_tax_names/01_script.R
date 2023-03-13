@@ -10,8 +10,6 @@ spp_names <- unique(occ$spp)
 q1 <- search_cas(query = spp_names, type = "species")
 valid <- spp_names[spp_names %in% q1$valid_name]
 not_valid <- spp_names[!spp_names %in% q1$valid_name]
-print(glue("Valid species found: {glue_collapse(valid, sep = ', ')}"))
-print(glue("Not valid species names: {glue_collapse(not_valid, sep = ', ')}"))
 
 paste0(
   "# Testing gha for automated taxonomic checking ",
@@ -22,5 +20,5 @@ paste0(
   paste(glue("Not valid species names: {glue_collapse(not_valid, sep = ', ')}"),
         glue("Not valid species names: {glue_collapse(not_valid, sep = ', ')}"),
         sep = "\t")
-) |> writeLines("README.md")
+) |> writeLines("01_check_tax_names/README.md")
 
