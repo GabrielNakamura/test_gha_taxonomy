@@ -1,5 +1,4 @@
 library(here)
-library(rFishTaxa)
 library(rfishbase)
 library(glue)
 library(rgbif)
