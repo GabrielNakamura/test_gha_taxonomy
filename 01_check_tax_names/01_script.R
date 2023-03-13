@@ -1,15 +1,15 @@
 library(here)
-library(fishR)
+library(rFishTaxa)
 library(rfishbase)
 library(glue)
+library(rgbif)
 occ <- read.csv(here::here("data_table.csv"), sep = ",")
 
 # searching species names in CAS ------------------------------------------
-
-spp_names <- unique(occ$spp)
-q1 <- search_cas(query = spp_names, type = "species")
-valid <- spp_names[spp_names %in% q1$valid_name]
-not_valid <- spp_names[!spp_names %in% q1$valid_name]
+spp <- unique(occ$spp)
+spp_names <- name_backbone_checklist(spp)
+table <- spp_names |>
+  knitr::kable()
 
 paste0(
   "# Testing gha for automated taxonomic checking ",
@@ -17,8 +17,7 @@ paste0(
   ".
 <hr> \n
 ",
-  paste(glue("Not valid species names: {glue_collapse(not_valid, sep = ', ')}"),
-        glue("Not valid species names: {glue_collapse(not_valid, sep = ', ')}"),
-        sep = "\t")
+  paste(table, collapse = "\n")
 ) |> writeLines("01_check_tax_names/README.md")
+
 

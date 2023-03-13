@@ -25,7 +25,7 @@ jobs:
             any::readr
             any::knitr
             any::here
-            any::fishR
+            any::rgbif
             any::rfishbase
             any::glue
 
