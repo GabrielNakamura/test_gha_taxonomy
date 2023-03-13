@@ -3,7 +3,7 @@ on:
     branches:
     - main
     paths:
-    - 01_check_tax_names
+    - data_table.csv
   schedule:
     - cron:  "5 16 * * *"
   workflow_dispatch:
