@@ -2,7 +2,7 @@ library(here)
 library(fishR)
 library(rfishbase)
 library(glue)
-occ <- read.csv(here::here("data_table.csv"))
+occ <- read.csv(here::here("data_table.csv"), sep = ",")
 
 # searching species names in CAS ------------------------------------------
 
