@@ -20,9 +20,15 @@ with:
 with:
   packages: |
   any::here
-any::fishR
-any::rfishbase
-any::glue
+  any::gh
+  any::dplyr
+  any::tidyr
+  any::readr
+  any::knitr
+  any::fishR
+  any::rfishbase
+  any::glue
+
 
 - name: Execute Script
 run: |
